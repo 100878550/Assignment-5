@@ -65,7 +65,7 @@ article {
 
 nav {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #ff80ff;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -247,4 +247,27 @@ audio {
 
 .comment-container li p:nth-child(2) {
   flex: 5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  clip: auto;
+  background: #333;
+  color: white;
+  padding: 1rem;
+  display: block;
+  z-index: 1000;
 }

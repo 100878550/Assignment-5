@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="sr-only focusable">Skip to main content</a>
     <div class="header">
       <h1>Welcome to our wildlife website</h1>
     </div>
@@ -33,12 +34,15 @@
       <li><a href="#">Blog</a></li>
     </ul>
 
-    <form class="search">
-      <input type="search" name="q" placeholder="Search query">
+    <form class="search" aria-label="Site search">
+      <label for="search" class="sr-only">Search the site</label>
+      <input type="search" id="search" name="q" placeholder="Search query">
       <input type="submit" value="Go!">
-    </form></nav>
+    </form>
 
-    <main>
+  </nav>
+
+    <main id="main-content">
       <article>
         <h2>The trouble with Bears</h2>
         <p>By Evan Wild</p>
@@ -49,14 +53,15 @@
         <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
         <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
         <table>
+          <caption>Comparison of wild and urban bears by physical traits and habits</caption>
           <thead>
             <tr>
-              <td>Bear Type</td>
-              <td>Coat</td>
-              <td>Adult size</td>
-              <td>Habitat</td>
-              <td>Lifespan</td>
-              <td>Diet</td>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
             </tr>
           </thead>
           <tbody>
@@ -84,12 +89,12 @@
         <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
         </p>
         
-        <img src="media/wild-bear.jpg">
+        <img src="media/wild-bear.jpg" alt="A wild brown bear standing in the woods">
 
         <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
         </p>
 
-        <img src="media/urban-bear.jpg">
+        <img src="media/urban-bear.jpg" alt="An urban bear standing near a dumpster">
 
         <p>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.
         </p>
@@ -103,6 +108,7 @@
         </p>
 
         <audio controls>
+          <p><strong>Transcript:</strong> This audio describes bear mating rituals including how wild bears decorate their dens with cave paintings, and urban bears use music and lighting to impress mates. Featuring quotes from wildlife experts.</p>
           <source src="media/bear.mp3" type="audio/mp3">
           <source src="media/bear.ogg" type="audio/ogg">
           <p>It looks like your browser doesn't support HTML5 audio players.</p>
@@ -119,21 +125,22 @@
           </p>
         </aside>
         <section class="comments">
-          <div class="show-hide">Show comments</div>
+          <button class="show-hide" aria-expanded="false">Show comments</button>
+
 
           <div class="comment-wrapper">
 
             <h2>Add comment</h2>
 
-            <form class="comment-form">
+            <form class="comment-form" aria-label="">
               <div class="flex-pair">
-                <p>Your name:</p>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <label for="name">Your name:</label>
+                <input type="text" name="name" id="name">
               </div>
               <div class="flex-pair">
-                <p>Your comment:</p>
+                <label for="comment">Your comment:</label>
                 <input type="text" name="comment" id="comment" placeholder="Enter your comment">
-              </div>
+                </div>
               <div>
                 <input type="submit" value="Submit comment">
               </div>
